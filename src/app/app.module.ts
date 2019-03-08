@@ -19,13 +19,13 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { NewTaskModalPage } from './new-task-modal/new-task-modal.page';
+// import { NewEventModalPage } from './new-event-modal/new-event-modal.page';
 
 
 @NgModule({
   declarations: [AppComponent],
-  // declarations: [AppComponent, NewTaskModalPage],
-  // entryComponents: [NewTaskModalPage],
+  // declarations: [AppComponent, NewEventModalPage],
+  // entryComponents: [NewEventModalPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

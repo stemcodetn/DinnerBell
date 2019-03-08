@@ -1,20 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
-import { HomePage } from './home.page';
-import { HomeResolver } from './home.resolver';
+import { NewEventPage } from './new-event.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
-    resolve: {
-      data: HomeResolver
-    }
+    component: NewEventPage
   }
 ];
 
@@ -26,9 +20,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [HomePage],
-  providers: [
-    HomeResolver
-  ]
+  providers: [Location],
+  declarations: [NewEventPage]
 })
-export class HomePageModule {}
+export class NewEventPageModule {}

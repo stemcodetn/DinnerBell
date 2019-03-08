@@ -54,10 +54,10 @@ export class DetailsPage implements OnInit {
       description: value.description,
       image: this.image
     }
-    this.firebaseService.updateTask(this.item.id,data)
+    this.firebaseService.updateEvent(this.item.id,data)
     .then(
       res => {
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/client"]);
       }
     )
   }
@@ -76,10 +76,10 @@ export class DetailsPage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            this.firebaseService.deleteTask(this.item.id)
+            this.firebaseService.deleteEvent(this.item.id)
             .then(
               res => {
-                this.router.navigate(["/home"]);
+                this.router.navigate(["/client"]);
               },
               err => console.log(err)
             )

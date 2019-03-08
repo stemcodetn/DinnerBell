@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 import { IonicModule } from '@ionic/angular';
-import { NewTaskPage } from './new-task.page';
+
+import { ClientPage } from './client.page';
+import { ClientResolver } from './client.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: NewTaskPage
+    component: ClientPage,
+    resolve: {
+      data: ClientResolver
+    }
   }
 ];
 
@@ -20,7 +26,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  providers: [Location],
-  declarations: [NewTaskPage]
+  declarations: [ClientPage],
+  providers: [
+    ClientResolver
+  ]
 })
-export class NewTaskPageModule {}
+export class ClientPageModule {}
