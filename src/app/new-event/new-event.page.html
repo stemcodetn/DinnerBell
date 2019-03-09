@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="client"></ion-back-button>
     </ion-buttons>
@@ -22,22 +22,22 @@
   </div>
   <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
-      <ion-label position="floating" color="primary">Title</ion-label>
+      <ion-label position="floating" color="secondary">Title</ion-label>
       <ion-input type="text" formControlName="title"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Description</ion-label>
+      <ion-label position="floating" color="secondary">Description</ion-label>
       <ion-input type="text" formControlName="description"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Price</ion-label>
+      <ion-label position="floating" color="secondary">Price</ion-label>
       <ion-input type="text" formControlName="price"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Location</ion-label>
+      <ion-label position="floating" color="secondary">Location</ion-label>
       <ion-input type="text" formControlName="location"></ion-input>
     </ion-item>
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Create</ion-button>

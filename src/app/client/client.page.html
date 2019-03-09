@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/new-event']">
         <ion-icon slot="icon-only" name="add"></ion-icon>
       Host Event</ion-button>
 
       <ion-button [routerLink]="['/profile']">
-        <ion-icon slot="icon-only" name="add"></ion-icon>
+        <ion-icon slot="icon-only" name="contact"></ion-icon>
       Profile</ion-button>
 
 
@@ -32,8 +32,18 @@
   </div>
 </ion-content>
 
-<ion-footer (click)="logout()">
-  <ion-toolbar color="medium">
-    <ion-title>Log out</ion-title>
-  </ion-toolbar>
-</ion-footer>
+<ion-footer>
+
+      <ion-button (click)="logout()">
+          <ion-icon slot="start" name="exit"></ion-icon>
+        </ion-button>
+
+        <ion-button>
+            <ion-icon [routerLink]="['/profile']" slot="start" name="contact"></ion-icon>
+          </ion-button>
+
+      <ion-button>
+          <ion-icon slot="start" name="contacts"></ion-icon>
+        </ion-button>
+  </ion-footer>
+
