@@ -3,7 +3,13 @@
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/new-event']">
         <ion-icon slot="icon-only" name="add"></ion-icon>
-      </ion-button>
+      Host Event</ion-button>
+
+      <ion-button [routerLink]="['/profile']">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      Profile</ion-button>
+
+
     </ion-buttons>
     <ion-title>DinnerBell</ion-title>
   </ion-toolbar>
@@ -25,6 +31,7 @@
     No events listed in your local area...
   </div>
 </ion-content>
+
 <ion-footer (click)="logout()">
   <ion-toolbar color="medium">
     <ion-title>Log out</ion-title>

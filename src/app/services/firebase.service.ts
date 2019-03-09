@@ -46,7 +46,7 @@ export class FirebaseService {
     //remember to unsubscribe from the snapshotChanges
     this.snapshotChangesSubscription.unsubscribe();
   }
-
+// this should also be how user update works
   updateEvent(eventKey, value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -57,6 +57,7 @@ export class FirebaseService {
       )
     })
   }
+
 
   deleteEvent(eventKey){
     return new Promise<any>((resolve, reject) => {
@@ -75,6 +76,8 @@ export class FirebaseService {
       this.afs.collection('people').doc(currentUser.uid).collection('events').add({
         title: value.title,
         description: value.description,
+        price: value.price,
+        location: value.location,
         image: value.image
       })
       .then(
@@ -114,4 +117,34 @@ export class FirebaseService {
       })
     })
   }
+
+  createProfile(value){
+    return new Promise<any>((resolve, reject) => {
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('people').doc(currentUser.uid).collection('profiles').add({
+        name: value.name,
+        username: value.username,
+        age: value.age,
+        bio: value.bio,
+        image: value.image
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+    // this should also be how user update works
+    updateProfile(profileKey, value){
+      return new Promise<any>((resolve, reject) => {
+        let currentUser = firebase.auth().currentUser;
+        this.afs.collection('people').doc(currentUser.uid).collection('events').doc(profileKey).set(value)
+        .then(
+          res => resolve(res),
+          err => reject(err)
+        )
+      })
+    }
+
 }

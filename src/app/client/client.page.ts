@@ -52,4 +52,13 @@ export class ClientPage implements OnInit {
     })
   }
 
+  profile(){
+    this.authService.doLogout()
+    .then(res => {
+      this.router.navigate(["/login"]);
+    }, err => {
+      console.log(err);
+    })
+  }
+
 }

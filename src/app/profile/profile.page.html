@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="client"></ion-back-button>
     </ion-buttons>
-    <ion-title>New Event</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -22,24 +22,24 @@
   </div>
   <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
-      <ion-label position="floating" color="primary">Title</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
+      <ion-label position="floating" color="primary">Full Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Description</ion-label>
-      <ion-input type="text" formControlName="description"></ion-input>
+      <ion-label position="floating" color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Price</ion-label>
-      <ion-input type="text" formControlName="price"></ion-input>
+      <ion-label position="floating" color="primary">Age</ion-label>
+      <ion-input type="text" formControlName="age"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Location</ion-label>
-      <ion-input type="text" formControlName="location"></ion-input>
+      <ion-label position="floating" color="primary">Bio</ion-label>
+      <ion-input type="text" formControlName="bio"></ion-input>
     </ion-item>
-    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Create</ion-button>
+    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Save</ion-button>
   </form>
 </ion-content>

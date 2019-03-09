@@ -8,6 +8,8 @@ const routes: Routes = [
   { path: 'details/:id', loadChildren: './details/details.module#DetailsPageModule' },
   { path: 'client', loadChildren: './client/client.module#ClientPageModule' },
   { path: 'new-event', loadChildren: './new-event/new-event.module#NewEventPageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
+
   // { path: 'new-event-modal', loadChildren: './new-event-modal/new-event-modal.module#NewEventModalPageModule' },
 ];
 

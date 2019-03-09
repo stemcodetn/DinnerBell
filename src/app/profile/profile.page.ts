@@ -1,57 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { LoadingController, ToastController, AlertController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
-import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.page.html',
-  styleUrls: ['./details.page.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
 })
-export class DetailsPage implements OnInit {
+export class ProfilePage implements OnInit {
 
   validations_form: FormGroup;
   image: any;
-  item: any;
-  load: boolean = false;
 
   constructor(
     private imagePicker: ImagePicker,
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
+    public router: Router,
     private formBuilder: FormBuilder,
     private firebaseService: FirebaseService,
-    private webview: WebView,
-    private alertCtrl: AlertController,
-    private route: ActivatedRoute,
-    private router: Router
+    private webview: WebView
   ) { }
 
   ngOnInit() {
-    this.getData();
+    this.resetFields();
   }
-
-  getData(){
-    this.route.data.subscribe(routeData => {
-     let data = routeData['data'];
-     if (data) {
-       this.item = data;
-       this.image = this.item.image;
-     }
-    })
+  //USER (collection users) FIELDS name, username, age, bio
+  resetFields(){
+    this.image = "./assets/imgs/default_image.jpg";
     this.validations_form = this.formBuilder.group({
-      title: new FormControl(this.item.title, Validators.required),
-      description: new FormControl(this.item.description, Validators.required),
-      price: new FormControl(this.item.price, Validators.required),
-      location: new FormControl(this.item.location, Validators.required)
-
+      name: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
+      age: new FormControl('', Validators.required),
+      bio: new FormControl('', Validators.required)
     });
   }
 
-  upateProfile(value){
+  onSubmit(value){
     let data = {
       name: value.name,
       username: value.username,
@@ -59,57 +49,12 @@ export class DetailsPage implements OnInit {
       bio: value.bio,
       image: this.image
     }
-    this.firebaseService.updateProfile(this.item.id,data)
+    this.firebaseService.createProfile(data)
     .then(
       res => {
         this.router.navigate(["/client"]);
       }
     )
-  }
-
-  onSubmit(value){
-    let data = {
-      title: value.title,
-      description: value.description,
-      price: value.price,
-      location: value.location,
-
-      image: this.image
-    }
-    this.firebaseService.updateEvent(this.item.id,data)
-    .then(
-      res => {
-        this.router.navigate(["/client"]);
-      }
-    )
-  }
-
-  async delete() {
-    const alert = await this.alertCtrl.create({
-      header: 'Confirm',
-      message: 'Do you want to delete ' + this.item.title + '?',
-      buttons: [
-        {
-          text: 'No',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {}
-        },
-        {
-          text: 'Yes',
-          handler: () => {
-            this.firebaseService.deleteEvent(this.item.id)
-            .then(
-              res => {
-                this.router.navigate(["/client"]);
-              },
-              err => console.log(err)
-            )
-          }
-        }
-      ]
-    });
-    await alert.present();
   }
 
   openImagePicker(){
@@ -144,7 +89,6 @@ export class DetailsPage implements OnInit {
       duration: 3000
     });
     this.presentLoading(loading);
-    // let image_to_convert = 'http://localhost:8080/_file_' + image;
     let image_src = this.webview.convertFileSrc(image);
     let randomId = Math.random().toString(36).substr(2, 5);
 
