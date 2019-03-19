@@ -20,7 +20,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { NewEventModalPage } from './new-event-modal/new-event-modal.page';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app
     AngularFirestoreModule, // imports firebase/firestore
     AngularFireAuthModule, // imports firebase/auth
-    AngularFireStorageModule, // imports firebase/storage
+    AngularFireStorageModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule // imports firebase/storage
   ],
   providers: [
     StatusBar,

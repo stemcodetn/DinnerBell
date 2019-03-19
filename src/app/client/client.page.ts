@@ -60,5 +60,8 @@ export class ClientPage implements OnInit {
       console.log(err);
     })
   }
+  navigate() {
+    this.router.navigate(["/nav"]);
+  }
 
 }

@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-button slot="start" fill="clear" (click)="goBack()">
+            <mat-icon>clear</mat-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+  <ion-content padding>
+    <div class="links">
+      <ion-grid>
+        <ion-row>
+          <ion-col align-self-start></ion-col>
+          <ion-col align-self-center>
+            <h1 class="mat-display-3" (click)="explore()">Explore</h1>
+            <p class="mat-title">Find events around your location and sign up.</p>
+            <h1 class="mat-display-3" (click)="home()">Home</h1>
+            <p class="mat-title">Browse your events and create new ones.</p>
+            <h1 class="mat-display-3" (click)="account()">My Account</h1>
+            <p class="mat-title">Configure your account and how others see you.</p>
+            <h1 class="mat-display-3" (click)="about()">About DinnerBell</h1>
+            <p class="mat-title">Discover the functionality and bases of this app.</p>
+          </ion-col>
+          <ion-col align-self-end></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-content>

@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ClientPage } from './client.page';
-import { ClientResolver } from './client.resolver';
+import { NavPage } from './nav.page';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+
+
 const routes: Routes = [
   {
     path: '',
-    component: ClientPage,
-    resolve: {
-      data: ClientResolver
-    }
+    component: NavPage
   }
 ];
 
@@ -23,15 +21,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes),
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [ClientPage],
-  providers: [
-    ClientResolver
-  ]
+  declarations: [NavPage]
 })
-export class ClientPageModule {}
+export class NavPageModule {}
