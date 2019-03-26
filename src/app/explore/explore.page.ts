@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+import { ExploreService } from './explore.service';
 
 @Component({
   selector: 'app-explore',
@@ -12,7 +13,8 @@ export class ExplorePage implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private exploreService: ExploreService
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,7 @@ export class ExplorePage implements OnInit {
     this.route.data.subscribe(routeData => {
       routeData['data'].subscribe(data => {
         loading.dismiss();
+        console.log(data[0].payload.doc.data())
         this.items = data;
       })
     })
@@ -37,6 +40,12 @@ export class ExplorePage implements OnInit {
     return await loading.present();
   }
 
+  getTestData() {
+    this.exploreService.getGeocoding('LN STEM Academy').subscribe((data) => {
+      console.log(data);
+    }, err => console.error(err),
+    () => console.log('done loading'));
+  }
   navigate() {
     this.router.navigate(["/nav"]);
   }

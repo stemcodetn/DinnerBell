@@ -8,7 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { ExplorePage } from './explore.page';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {ExploreResolver} from './explore.resolver'
+import {ExploreResolver} from './explore.resolver';
+import { MapComponent } from './map/map.component'
 
 const routes: Routes = [
   {
@@ -29,7 +30,7 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [ExplorePage],
+  declarations: [ExplorePage, MapComponent],
   providers: [
     ExploreResolver
   ]
