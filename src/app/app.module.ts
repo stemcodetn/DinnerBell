@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { NewEventModalPage } from './new-event-modal/new-event-modal.page';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,12 +35,13 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app
-    AngularFirestoreModule, // imports firebase/firestore
+    AngularFirestoreModule.enablePersistence(), // imports firebase/firestore
     AngularFireAuthModule, // imports firebase/auth
     AngularFireStorageModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule // imports firebase/storage
+    MatCheckboxModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) // imports firebase/storage
   ],
   providers: [
     StatusBar,

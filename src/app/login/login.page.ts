@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import {Events} from '@ionic/angular'
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,6 @@ export class LoginPage implements OnInit {
 
   validations_form: FormGroup;
   errorMessage: string = '';
-
   validation_messages = {
    'email': [
      { type: 'required', message: 'Email is required.' },
@@ -27,7 +27,8 @@ export class LoginPage implements OnInit {
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private events: Events
   ) { }
 
   ngOnInit() {
@@ -42,7 +43,6 @@ export class LoginPage implements OnInit {
       ])),
     });
   }
-
   tryLogin(value){
     this.authService.doLogin(value)
     .then(res => {

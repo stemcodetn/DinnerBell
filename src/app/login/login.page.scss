@@ -13,3 +13,47 @@
 {
   margin-top: 40px;
 }
+.email {
+  // border: 1px solid red;
+  // border-radius: 3em;
+  // padding:1em;
+  background-color: rgba(0,0,0,0);
+}
+// .input {
+//   border-bottom: 1px solid black;
+// }
+.form-test {
+  position: absolute;
+  text-align:center;
+  padding: 1em;
+  background: white;
+  box-shadow: 0 0 0.35em;
+  border-radius: 20px;
+  width: 85vw;
+}
+.form-test input[type = "text"], .form-test input[type = "password"] {
+  border: 0;
+  background: none;
+  display: flex;
+  vertical-align: middle;
+  height: 10vh;
+  margin: 20px auto;
+  text-align: center;
+  //border-radius: 50px;
+  transition: 0.5s ease;
+  //width: 25vw;
+}
+// .form-test input[type = "text"]:focus, .form-test input[type = "password"]:focus {
+//   //width: 35vw;
+//   //border-color: red;
+// }
+ion-grid {
+  height: 100%;
+}
+.legal {
+  display: inline-block;
+}
+.register {
+  padding-top: 300px;
+  height: 100%;
+}

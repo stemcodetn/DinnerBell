@@ -1,11 +1,24 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-button slot="start" fill="clear" (click)="navigate()">
-          <mat-icon>menu</mat-icon>
-      </ion-button>
-      <ion-title>Account</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear" (click)="navigate()">
+      <mat-icon>menu</mat-icon>
+    </ion-button>
+    <ion-title>Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- To Do For This Page:
+        Restylize text to make it larger and more responsive. 
+        Use the ion-grid more? -- Enlargen input fields
+        Patterned Background
+        Add photo choice function. (Take photo w/ phone?)
+        Switch user and logout buttons
+        Link for Chef Validation Services
+        
+        Color Scheming with Jordan.
+        Comment code.
+        Double check navigation.
+  -->
 <ion-content padding>
   <!-- <div>
   </div> -->
@@ -16,19 +29,19 @@
       </ion-avatar>
     </ion-row>
     <ion-row align-items-center justify-content-center>
-        <h1 class="mat-display-3">Tyler Duckworth</h1>
+      <h1 class="mat-display-3">Tyler Duckworth</h1>
     </ion-row>
     <ion-row align-items-center justify-content-center>
-        <ion-item lines="none">
-          <mat-icon>email</mat-icon>
-          <span>&nbsp;</span>
-          <form>
-            <mat-form-field>
-              <input matInput placeholder="Email">
-              <mat-icon matSuffix>mode_edit</mat-icon>
-            </mat-form-field>
-          </form>
-        </ion-item>
+      <ion-item lines="none">
+        <mat-icon>email</mat-icon>
+        <span>&nbsp;</span>
+        <form>
+          <mat-form-field>
+            <input matInput placeholder="Email">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+        </form>
+      </ion-item>
     </ion-row>
     <ion-row align-items-center justify-content-center>
       <ion-item lines="none">
@@ -44,17 +57,17 @@
     </ion-row>
     <ion-row align-items-center justify-content-center>
       <ion-item lines="none">
-          <mat-icon>phone</mat-icon>
-          <span>&nbsp;</span>
-          <form>
-            <mat-form-field>
-              <span matPrefix>+1 &nbsp;</span>
-              <input type="tel" matInput placeholder="Telephone">
-              <mat-icon matSuffix>mode_edit</mat-icon>
-            </mat-form-field>
-          </form>
+        <mat-icon>phone</mat-icon>
+        <span>&nbsp;</span>
+        <form>
+          <mat-form-field>
+            <span matPrefix>+1 &nbsp;</span>
+            <input type="tel" matInput placeholder="Telephone">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+        </form>
       </ion-item>
     </ion-row>
   </ion-grid>
-  
+
 </ion-content>

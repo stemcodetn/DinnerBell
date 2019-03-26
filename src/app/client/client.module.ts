@@ -9,6 +9,8 @@ import { ClientPage } from './client.page';
 import { ClientResolver } from './client.resolver';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 const routes: Routes = [
   {
     path: '',
@@ -27,11 +29,14 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpModule,
+    HttpClientModule
   ],
   declarations: [ClientPage],
   providers: [
-    ClientResolver
+    ClientResolver,
+    HttpClient
   ]
 })
 export class ClientPageModule {}

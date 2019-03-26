@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 import { Event as NavigationEvent } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { NavigationStart } from "@angular/router";
-import { NavController } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-nav',
@@ -14,16 +14,19 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./nav.page.scss'],
 })
 export class NavPage implements OnInit {
+  screenWidth: number;
 
   constructor(public loadingCtrl: LoadingController,
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-    private navCtrl: NavController) {
-     }
-
+    private navCtrl: NavController,
+    private platform: Platform) {
+      
+    }
   ngOnInit() {
+    this.screenWidth = this.platform.width();
   }
   goBack() {
     this.navCtrl.back();

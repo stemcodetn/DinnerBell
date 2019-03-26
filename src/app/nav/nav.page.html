@@ -4,23 +4,37 @@
             <mat-icon>clear</mat-icon>
         </ion-button>
     </ion-toolbar>
+<!-- To Do For This Page:
+      COMPLETED --- Switch sides of grid.
+      Make headers more responsive and stylized (hover effect?) -- Move text? SVG Warp Effect?
+      COMPLETED --- Add breakpoint checker to remove descriptions on mobile.
+      Add different font for headers (Abril Fatface? Playfair Display?)
+      
+      Color Scheming with Jordan. 
+      Double Check Routing. 
+      Comment code concisely.
+-->
 </ion-header>
   <ion-content padding>
     <div class="links">
       <ion-grid>
         <ion-row>
-          <ion-col align-self-start></ion-col>
-          <ion-col align-self-center>
-            <h1 class="mat-display-3" (click)="explore()">Explore</h1>
-            <p class="mat-title">Find events around your location and sign up.</p>
-            <h1 class="mat-display-3" (click)="home()">Home</h1>
-            <p class="mat-title">Browse your events and create new ones.</p>
-            <h1 class="mat-display-3" (click)="account()">My Account</h1>
-            <p class="mat-title">Configure your account and how others see you.</p>
-            <h1 class="mat-display-3" (click)="about()">About DinnerBell</h1>
-            <p class="mat-title">Discover the functionality and bases of this app.</p>
+          <ion-col align-self-start offset="1">
+            <h1 class="mat-display-3" [routerLink]="['/explore']">Explore</h1>
+            <p class="mat-title dsk-only" [hidden]="screenWidth < 576">Find events around your location and sign up.</p>
+            <h1 class="mat-display-3" [routerLink]="['/client']">Home</h1>
+            <p class="mat-title dsk-only" [hidden]="screenWidth < 576">Browse your events and create new ones.</p>
+            <h1 class="mat-display-3" [routerLink]="['/account']">My Account</h1>
+            <p class="mat-title dsk-only" [hidden]="screenWidth < 576">Configure your account and how others see you.</p>
+            <h1 class="mat-display-3" [routerLink]="['/about']">About</h1>
+            <p class="mat-title dsk-only" [hidden]="screenWidth < 576">Discover the functionality and bases of this app.</p>
           </ion-col>
-          <ion-col align-self-end></ion-col>
+          <ion-col align-self-end align-items-center class="contact">
+              <h1>Switch User</h1>
+              <h1>Sign Out</h1>
+              <h1 class="email">lorem.ipsum@gmail.com</h1>
+              <h1>(865) 123-4567</h1>
+            </ion-col>
         </ion-row>
       </ion-grid>
     </div>

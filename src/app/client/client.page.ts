@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material';
+import {Http} from '@angular/http'
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-client',
@@ -16,8 +21,13 @@ export class ClientPage implements OnInit {
     public loadingCtrl: LoadingController,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    http: Http,
+    httpClient: HttpClient,
+    registry: MatIconRegistry,
+    sanitizer: DomSanitizer
+  ) {
+  }
 
   ngOnInit() {
     if (this.route && this.route.data) {
@@ -34,6 +44,7 @@ export class ClientPage implements OnInit {
     this.route.data.subscribe(routeData => {
       routeData['data'].subscribe(data => {
         loading.dismiss();
+        console.log(data);
         this.items = data;
       })
     })

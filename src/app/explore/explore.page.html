@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear" (click)="navigate()">
+        <mat-icon>menu</mat-icon>
+    </ion-button>
+    <ion-title>Explore</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--To Do For Page:
+      Create actual page.
+      Add Search Bar
+      Look into MapboxGL for Ionic/Angular
+      Sidebar -- AM has one (Arrow to pull it out/push it in)
+      Filter Modal Box
+
+      Color Scheming with Jordan. 
+      Double Check Routing. 
+      Comment code concisely.
+-->
+<ion-content padding>
+  <div>
+    <!-- Search Bar (MD or Ionic) -->
+    <ion-searchbar animated="true" placeholder="Search for events near you" showCancelButton="true"></ion-searchbar>
+  </div>
+  <div>
+    <!-- Map - Mapbox? (MapboxGL)-->
+  </div>
+  <div>
+    <!-- Sidebar for events -->
+  </div>
+</ion-content>
