@@ -43,6 +43,7 @@
         "core-js": "^2.5.4",
         "firebase": "^5.7.0",
         "mapbox-gl": "^0.53.1",
+        "particles.js": "^2.0.0",
         "rxjs": "~6.3.3",
         "zone.js": "~0.8.29"
     },

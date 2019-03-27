@@ -8,7 +8,9 @@ import { IonicModule } from '@ionic/angular';
 import { ExplorePage } from './explore.page';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {ExploreResolver} from './explore.resolver';
+import {ClientResolver} from '../client/client.resolver'
 import { MapComponent } from './map/map.component'
 
 const routes: Routes = [
@@ -16,7 +18,8 @@ const routes: Routes = [
     path: '',
     component: ExplorePage,
     resolve: {
-      data: ExploreResolver
+      data: ExploreResolver,
+      cards: ClientResolver
     }
   }
 ];
@@ -28,7 +31,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule
   ],
   declarations: [ExplorePage, MapComponent],
   providers: [

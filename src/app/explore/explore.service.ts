@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+// import testJson from '../../assets/json/test.json';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +16,6 @@ export class ExploreService {
     let newLocation = location.replace(' ', '%20');
     return this.http.get(this.geocodingURL + newLocation + this.geoURLend);
   }
-  getMarkers() {
-    
+  getMarkers(){
   }
 }

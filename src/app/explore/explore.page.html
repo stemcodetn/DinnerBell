@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-button slot="start" fill="clear" (click)="navigate()">
-        <mat-icon>menu</mat-icon>
+      <mat-icon>menu</mat-icon>
     </ion-button>
     <ion-title>Explore</ion-title>
   </ion-toolbar>
@@ -17,16 +17,41 @@
       Double Check Routing. 
       Comment code concisely.
 -->
-<ion-content padding>
-  <p (click)="getTestData()">Test</p>
+<ion-content>
   <div>
     <!-- Search Bar (MD or Ionic) -->
-    <ion-searchbar animated="true" placeholder="Search for events near you" showCancelButton="true"></ion-searchbar>
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav [mode]="control.value">
+        <div *ngIf="items.length > 0">
+          <ion-card *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
+            <img [src]="item.payload.doc.data().image">
+            <ion-card-header>
+              <ion-card-title>{{item.payload.doc.data().title}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button fill="clear" slot="end">Details</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <ion-toolbar>
+          <ion-searchbar animated="true" placeholder="Search for events near you"
+            showCancelButton="true"></ion-searchbar>
+          <ion-button slot="start" fill="clear">
+            <mat-icon *ngIf="this.sideNavIsOut" (click)="close()">keyboard_arrow_right</mat-icon>
+            <mat-icon *ngIf="!this.sideNavIsOut" (click)="open()">keyboard_arrow_left</mat-icon>
+          </ion-button>
+        </ion-toolbar>
+        <div class="map">
+          <app-map></app-map>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </div>
-  <div>
-    <!-- Map - Mapbox? (MapboxGL)-->
-  </div>
+  <!--  -->
   <div>
     <!-- Sidebar for events -->
+
   </div>
 </ion-content>

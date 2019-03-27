@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { ExploreService } from './explore.service';
+import {FormControl} from '@angular/forms';
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-explore',
@@ -9,7 +11,10 @@ import { ExploreService } from './explore.service';
   styleUrls: ['./explore.page.scss'],
 })
 export class ExplorePage implements OnInit {
+  @ViewChild('sidenav') sidenav: MatSidenav;
   items: Array<any>;
+  control = new FormControl('side');
+  sideNavIsOut = false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -31,7 +36,6 @@ export class ExplorePage implements OnInit {
     this.route.data.subscribe(routeData => {
       routeData['data'].subscribe(data => {
         loading.dismiss();
-        console.log(data[0].payload.doc.data())
         this.items = data;
       })
     })
@@ -48,5 +52,15 @@ export class ExplorePage implements OnInit {
   }
   navigate() {
     this.router.navigate(["/nav"]);
+  }
+  close() {
+    this.sidenav.close();
+    this.sideNavIsOut = false;
+    console.log("Closed!")
+  }
+  open() {
+    this.sidenav.open();
+    this.sideNavIsOut = true;
+    console.log("Opened!")
   }
 }
