@@ -13,6 +13,9 @@ h1 {
     font-family: 'Lato', sans-serif;
     //text-align: center;
 }
+ion-grid {
+    height: 100%;
+}
 .email {
     text-align: center;
     vertical-align: middle !important;
@@ -25,5 +28,13 @@ h1 {
     .mat-display-3 {
         width: auto;
         margin-bottom:30px;
+    }
+}
+@media only screen and (min-height: 740px) {
+    .contact {
+        padding-bottom: 15%;
+    }
+    .nav {
+        padding-top:15%;
     }
 }
