@@ -25,6 +25,7 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ClientResolver } from './client/client.resolver';
+import {ParticlesModule} from 'angular-particle';
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,6 +45,7 @@ import { ClientResolver } from './client/client.resolver';
     MatButtonModule,
     HttpClientModule,
     MatCheckboxModule,
+    ParticlesModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) // imports firebase/storage
   ],
   providers: [

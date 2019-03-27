@@ -19,54 +19,67 @@
         Comment code.
         Double check navigation.
   -->
-<ion-content padding>
+<ion-content>
   <!-- <div>
   </div> -->
-  <ion-grid>
+  
+  <div id="particles-js"></div>
+  <!-- <div class="particulates">
+    <particles [params]="particleParams" [style]="particleStyle" [width]="100" [height]="100"></particles>
+  </div> -->
+  <ion-grid center>
     <ion-row align-items-center justify-content-center>
-      <ion-avatar class="hydrated">
-        <img src="../../assets/imgs/user-placeholder.png" class="usr-icon">
-      </ion-avatar>
-    </ion-row>
-    <ion-row align-items-center justify-content-center>
-      <h1 class="mat-display-3">Tyler Duckworth</h1>
-    </ion-row>
-    <ion-row align-items-center justify-content-center>
-      <ion-item lines="none">
-        <mat-icon>email</mat-icon>
-        <span>&nbsp;</span>
-        <form>
-          <mat-form-field>
-            <input matInput placeholder="Email">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-          </mat-form-field>
-        </form>
-      </ion-item>
-    </ion-row>
-    <ion-row align-items-center justify-content-center>
-      <ion-item lines="none">
-        <mat-icon>location_on</mat-icon>
-        <span>&nbsp;</span>
-        <form>
-          <mat-form-field>
-            <input matInput placeholder="ZIP">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-          </mat-form-field>
-        </form>
-      </ion-item>
-    </ion-row>
-    <ion-row align-items-center justify-content-center>
-      <ion-item lines="none">
-        <mat-icon>phone</mat-icon>
-        <span>&nbsp;</span>
-        <form>
-          <mat-form-field>
-            <span matPrefix>+1 &nbsp;</span>
-            <input type="tel" matInput placeholder="Telephone">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-          </mat-form-field>
-        </form>
-      </ion-item>
+      <ion-card>
+        <ion-card-header>
+          <ion-row align-items-center justify-content-center>
+            <ion-avatar class="hydrated">
+              <img src="../../assets/imgs/user-placeholder.png" class="usr-icon">
+            </ion-avatar>
+          </ion-row>
+          <ion-row align-items-center justify-content-center>
+            <h1 class="mat-display-3">Tyler Duckworth</h1>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row align-items-center justify-content-center>
+            <ion-item lines="none">
+              <mat-icon>email</mat-icon>
+              <span>&nbsp;</span>
+              <form>
+                <mat-form-field>
+                  <input matInput placeholder="Email">
+                  <mat-icon matSuffix>mode_edit</mat-icon>
+                </mat-form-field>
+              </form>
+            </ion-item>
+          </ion-row>
+          <ion-row align-items-center justify-content-center>
+            <ion-item lines="none">
+              <mat-icon>location_on</mat-icon>
+              <span>&nbsp;</span>
+              <form>
+                <mat-form-field>
+                  <input matInput placeholder="ZIP">
+                  <mat-icon matSuffix>mode_edit</mat-icon>
+                </mat-form-field>
+              </form>
+            </ion-item>
+          </ion-row>
+          <ion-row align-items-center justify-content-center>
+            <ion-item lines="none">
+              <mat-icon>phone</mat-icon>
+              <span>&nbsp;</span>
+              <form>
+                <mat-form-field>
+                  <span matPrefix>+1 &nbsp;</span>
+                  <input type="tel" matInput placeholder="Telephone">
+                  <mat-icon matSuffix>mode_edit</mat-icon>
+                </mat-form-field>
+              </form>
+            </ion-item>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
     </ion-row>
   </ion-grid>
 

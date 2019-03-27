@@ -9,7 +9,7 @@ import { AccountPage } from './account.page';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-
+import {ParticlesModule} from 'angular-particle';
 
 const routes: Routes = [
   {
@@ -26,7 +26,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    ParticlesModule
   ],
   declarations: [AccountPage]
 })

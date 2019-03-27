@@ -8,6 +8,11 @@ h1 {
 //     margin-left:5%;
 //     margin-top:0.25em;
 // }
+ion-grid {
+    position: absolute;
+    top:1em;
+    width:100%;
+}
 .usr-icon {
     width: 150%;
 }
@@ -17,4 +22,23 @@ h1 {
 ion-label {
     font-family: 'Exo 2', sans-serif;
     font-weight: 600;
+}
+ion-card {
+    background:white;
+    border-radius: 60px;
+}
+// .particulates {
+//     width: 500px;
+//     height: 500px
+// }
+// particles {
+//     width: 500px !important;
+//     height: 500px !important;
+// }
+#particles-js {
+    width:100vw;
+    height:100vh;
+    background-color: blue;
+    background-size:cover;
+    background-repeat: no-repeat;
 }
