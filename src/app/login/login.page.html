@@ -18,7 +18,8 @@
       Double Check Routing. 
       Comment code concisely.
 -->
-<ion-content padding class="form-content">
+<ion-content class="form-content">
+  <div id="particles-js"></div>
   <!-- <ion-grid class='ion-grid'>
     <ion-row align-items-center justify-content-center>
         <form class="form-test">
@@ -57,13 +58,12 @@
         </div>
         <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Log In</ion-button>
         <label class="error-message">{{errorMessage}}</label>
+        <p class="go-to-register">
+          No account yet? <a (click)="goRegisterPage()">Create an account.</a>
+        </p> 
       </form>
     </ion-row>
-    <ion-row class="register" justify-content-center>
-        <p class="go-to-register">
-            No account yet? <a (click)="goRegisterPage()">Create an account.</a>
-        </p> 
-    </ion-row>
+    
   </ion-grid>
   <!-- particle.js background-->
 </ion-content>

@@ -3,6 +3,8 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import {Events} from '@ionic/angular'
+import 'particles.js/particles';
+const particlesJS = (window as any).particlesJS;
 
 @Component({
   selector: 'app-login',
@@ -41,6 +43,9 @@ export class LoginPage implements OnInit {
         Validators.minLength(5),
         Validators.required
       ])),
+    });
+    particlesJS.load('particles-js', '../../assets/json/particlesjs-config.json', function() {
+      console.log('callback - particles.js config loaded');
     });
   }
   tryLogin(value){

@@ -49,6 +49,9 @@
 // }
 ion-grid {
   height: 100%;
+  position: absolute;
+  top:1em;
+  width:100%;
 }
 .legal {
   display: inline-block;
@@ -56,4 +59,11 @@ ion-grid {
 .register {
   padding-top: 300px;
   height: 100%;
+}
+#particles-js {
+  width:100vw;
+  height:100vh;
+  background-color: blue;
+  background-size:cover;
+  background-repeat: no-repeat;
 }
