@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear" (click)="navigate()">
+        <mat-icon>menu</mat-icon>
+    </ion-button>
+    <ion-title>Join Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--This Page To Do:
+
+-->
+
+<ion-content *ngIf="items" class="list-mini-content" padding>
+  <ion-grid class="list-mini">
+    <!-- Iterate through list of avalable events. -->
+    <h1>Available Events:</h1>
+    <div *ngIf="items.length > 0">
+      <ion-row *ngFor="let item of items">
+        <ion-card *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
+          <img [src]="item.payload.doc.data().image">
+          <ion-card-header>
+            <ion-card-title>{{item.payload.doc.data().title}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button fill="clear" slot="end">Details</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
+    <p *ngIf="items.length == 0" class="empty-list">Hmmm... It looks like you haven't created any events...</p>
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+  <div class="footer">
+    </div>
+</ion-footer>

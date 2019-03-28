@@ -3,11 +3,11 @@ import { Resolve } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service';
 
 @Injectable()
-export class ClientResolver implements Resolve<any> {
+export class JoinResolver implements Resolve<any> {
 
   constructor(private firebaseService: FirebaseService) {}
 
   resolve() {
-    return this.firebaseService.getUserEvents();
+    return this.firebaseService.getGlobalEvents();
   }
 }

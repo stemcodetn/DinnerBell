@@ -16,17 +16,6 @@ export class FirebaseService {
     public afAuth: AngularFireAuth
   ){}
 
-  getEvents(){
-    return new Promise<any>((resolve, reject) => {
-      this.afAuth.user.subscribe(currentUser => {
-        if(currentUser){
-          this.snapshotChangesSubscription = this.afs.collection('people').doc(currentUser.uid).collection('events').snapshotChanges();
-          resolve(this.snapshotChangesSubscription);
-        }
-      })
-    })
-  }
-
   getEvent(eventId){
     return new Promise<any>((resolve, reject) => {
       this.afAuth.user.subscribe(currentUser => {
@@ -70,7 +59,7 @@ export class FirebaseService {
     })
   }
 
-  createEvent(value){
+  createUserEvent(value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
       this.afs.collection('people').doc(currentUser.uid).collection('events').add({
@@ -86,6 +75,47 @@ export class FirebaseService {
       )
     })
   }
+
+  getUserEvents(){
+    return new Promise<any>((resolve, reject) => {
+      this.afAuth.user.subscribe(currentUser => {
+        if(currentUser){
+          this.snapshotChangesSubscription = this.afs.collection('people').doc(currentUser.uid).collection('events').snapshotChanges();
+          resolve(this.snapshotChangesSubscription);
+        }
+      })
+    })
+  }
+
+  createGlobalEvent(value){
+    return new Promise<any>((resolve, reject) => {
+      this.afs.collection('events').add({
+        title: value.title,
+        description: value.description,
+        price: value.price,
+        location: value.location,
+        image: value.image
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
+
+getGlobalEvents(){
+    return new Promise<any>((resolve, reject) => {
+      this.afAuth.user.subscribe(currentUser => {
+          this.snapshotChangesSubscription = this.afs.collection('events').snapshotChanges();
+          resolve(this.snapshotChangesSubscription);
+      })
+    })
+  }
+
+
+
+
 
   encodeImageUri(imageUri, callback) {
     var c = document.createElement('canvas');

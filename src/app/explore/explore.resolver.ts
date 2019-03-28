@@ -8,6 +8,6 @@ export class ExploreResolver implements Resolve<any> {
   constructor(private firebaseService: FirebaseService) {}
 
   resolve() {
-    return this.firebaseService.getEvents();
+    return this.firebaseService.getGlobalEvents();
   }
 }
