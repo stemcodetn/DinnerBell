@@ -17,16 +17,25 @@
   <div>
     <ion-row no-padding>
       <ion-col size="6" offset="3">
-        <img [src]="image" alt="this is the image"/>
+        <img [src]="image" alt="this is the image" />
       </ion-col>
     </ion-row>
     <ion-row no-padding>
       <ion-col size="6" offset="3">
-        <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()">Change Picture</ion-button>
+        <ion-button
+          fill="outline"
+          expand="block"
+          size="small"
+          (click)="openImagePicker()"
+          >Change Picture</ion-button
+        >
       </ion-col>
     </ion-row>
   </div>
-  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+  <form
+    [formGroup]="validations_form"
+    (ngSubmit)="onSubmit(validations_form.value)"
+  >
     <ion-item>
       <ion-label position="floating" color="secondary">Title</ion-label>
       <ion-input type="text" formControlName="title"></ion-input>
@@ -46,6 +55,12 @@
       <ion-label position="floating" color="secondary">Location</ion-label>
       <ion-input type="text" formControlName="location"></ion-input>
     </ion-item>
-    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Create</ion-button>
+    <ion-button
+      class="submit-btn"
+      expand="block"
+      type="submit"
+      [disabled]="!validations_form.valid"
+      >Create</ion-button
+    >
   </form>
 </ion-content>

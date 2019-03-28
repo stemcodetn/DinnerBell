@@ -7,18 +7,18 @@ import { IonicModule } from '@ionic/angular';
 
 import { ClientPage } from './client.page';
 import { ClientResolver } from './client.resolver';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 const routes: Routes = [
   {
     path: '',
     component: ClientPage,
     resolve: {
-      data: ClientResolver
-    }
-  }
+      data: ClientResolver,
+    },
+  },
 ];
 
 @NgModule({
@@ -31,12 +31,9 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [ClientPage],
-  providers: [
-    ClientResolver,
-    HttpClient
-  ]
+  providers: [ClientResolver, HttpClient],
 })
 export class ClientPageModule {}

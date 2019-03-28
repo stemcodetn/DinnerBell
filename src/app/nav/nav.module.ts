@@ -6,15 +6,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { NavPage } from './nav.page';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
     path: '',
-    component: NavPage
-  }
+    component: NavPage,
+  },
 ];
 
 @NgModule({
@@ -24,8 +23,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
-  declarations: [NavPage]
+  declarations: [NavPage],
 })
 export class NavPageModule {}

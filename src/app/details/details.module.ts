@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,9 +13,9 @@ const routes: Routes = [
     path: '',
     component: DetailsPage,
     resolve: {
-      data: DetailsResolver
-    }
-  }
+      data: DetailsResolver,
+    },
+  },
 ];
 
 @NgModule({
@@ -24,9 +24,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
   declarations: [DetailsPage],
-  providers:[DetailsResolver]
+  providers: [DetailsResolver],
 })
 export class DetailsPageModule {}

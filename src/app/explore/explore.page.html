@@ -23,9 +23,13 @@
     <!-- Search Bar (MD or Ionic) -->
     <mat-sidenav-container>
       <mat-sidenav #sidenav [mode]="control.value">
-        <div *ngIf="items.length > 0">
-          <ion-card *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
-            <img [src]="item.payload.doc.data().image">
+        
+        <div *ngIf="items && items.length > 0">
+          <ion-card
+            *ngFor="let item of items"
+            [routerLink]="['/details', item.payload.doc.id]"
+          >
+            <img [src]="item.payload.doc.data().image" />
             <ion-card-header>
               <ion-card-title>{{item.payload.doc.data().title}}</ion-card-title>
             </ion-card-header>
@@ -37,11 +41,18 @@
       </mat-sidenav>
       <mat-sidenav-content>
         <ion-toolbar>
-          <ion-searchbar animated="true" placeholder="Search for events near you"
-            showCancelButton="true"></ion-searchbar>
+          <ion-searchbar
+            animated="true"
+            placeholder="Search for events near you"
+            showCancelButton="true"
+          ></ion-searchbar>
           <ion-button slot="start" fill="clear">
-            <mat-icon *ngIf="this.sideNavIsOut" (click)="close()">keyboard_arrow_right</mat-icon>
-            <mat-icon *ngIf="!this.sideNavIsOut" (click)="open()">keyboard_arrow_left</mat-icon>
+            <mat-icon *ngIf="this.sideNavIsOut" (click)="close()"
+              >keyboard_arrow_right</mat-icon
+            >
+            <mat-icon *ngIf="!this.sideNavIsOut" (click)="open()"
+              >keyboard_arrow_left</mat-icon
+            >
           </ion-button>
         </ion-toolbar>
         <div class="map">
@@ -53,6 +64,5 @@
   <!--  -->
   <div>
     <!-- Sidebar for events -->
-
   </div>
 </ion-content>

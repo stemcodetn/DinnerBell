@@ -6,12 +6,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ExplorePage } from './explore.page';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {ExploreResolver} from './explore.resolver';
-import {ClientResolver} from '../client/client.resolver'
-import { MapComponent } from './map/map.component'
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ExploreResolver } from './explore.resolver';
+import { ClientResolver } from '../client/client.resolver';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   {
@@ -19,9 +19,9 @@ const routes: Routes = [
     component: ExplorePage,
     resolve: {
       data: ExploreResolver,
-      cards: ClientResolver
-    }
-  }
+      cards: ClientResolver,
+    },
+  },
 ];
 
 @NgModule({
@@ -32,11 +32,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatButtonModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
   ],
   declarations: [ExplorePage, MapComponent],
-  providers: [
-    ExploreResolver
-  ]
+  providers: [ExploreResolver],
 })
 export class ExplorePageModule {}

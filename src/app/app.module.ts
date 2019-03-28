@@ -13,7 +13,10 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import {
+  AngularFirestoreModule,
+  FirestoreSettingsToken,
+} from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
@@ -25,7 +28,7 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ClientResolver } from './client/client.resolver';
-import {ParticlesModule} from 'angular-particle';
+import { ParticlesModule } from 'angular-particle';
 
 @NgModule({
   declarations: [AppComponent],
@@ -46,7 +49,9 @@ import {ParticlesModule} from 'angular-particle';
     HttpClientModule,
     MatCheckboxModule,
     ParticlesModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) // imports firebase/storage
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }), // imports firebase/storage
   ],
   providers: [
     StatusBar,
@@ -56,8 +61,8 @@ import {ParticlesModule} from 'angular-particle';
     ClientResolver,
     WebView,
     { provide: FirestoreSettingsToken, useValue: {} },
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

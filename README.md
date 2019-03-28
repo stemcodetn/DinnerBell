@@ -1,6 +1,12 @@
-### Need to do (ranked 1-5, with 5 being least important)
-* Add functionality for user messaging 5
-* Add ability to see user profiles (essentially the getdata() method but for users instead of events)2
-* Make It look nice 2
-* Have branding team write some articles about the app 3
-* Start build server 1
+# DinnerBell
+*Uniting us over what we all share in common: food.*
+
+## Build Instructions
+
+Before you run the website, make sure you have NPM installed and run ```npm i``` or ```npm install``` to install all relevant packages.
+
+With that done, run ```ionic serve``` to build the website and host it on the localhost at port 8100. (or any other if you use ```--port={ port # }```)
+
+## On Comments
+
+Due to the volume of files in this project, we decided to write comments in the ```.page.ts``` file for each page to save time.

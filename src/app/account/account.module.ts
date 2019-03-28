@@ -6,16 +6,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { AccountPage } from './account.page';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {ParticlesModule} from 'angular-particle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { ParticlesModule } from 'angular-particle';
 
 const routes: Routes = [
   {
     path: '',
-    component: AccountPage
-  }
+    component: AccountPage,
+  },
 ];
 
 @NgModule({
@@ -27,8 +27,8 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    ParticlesModule
+    ParticlesModule,
   ],
-  declarations: [AccountPage]
+  declarations: [AccountPage],
 })
 export class AccountPageModule {}

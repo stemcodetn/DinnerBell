@@ -1,12 +1,12 @@
 .map {
-    height: 632px;
-    width:100vw;
+  height: 632px;
+  width: 100vw;
 }
 .mapboxgl-canvas {
-    height: 1000px !important;
+  height: 1000px !important;
 }
 @media only screen and (min-height: 680px) {
-    .map {
-        height:95vh;
-    }
+  .map {
+    height: 95vh;
+  }
 }

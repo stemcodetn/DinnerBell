@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
 })
 export class AppComponent {
   constructor(
@@ -26,17 +26,21 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.afAuth.user.subscribe(user => {
-        if(user){
-          this.router.navigate(["/client"]);
-        } else {
-          this.router.navigate(["/login"]);
+      this.afAuth.user.subscribe(
+        user => {
+          if (user) {
+            this.router.navigate(['/client']);
+          } else {
+            this.router.navigate(['/login']);
+          }
+        },
+        err => {
+          this.router.navigate(['/login']);
+        },
+        () => {
+          this.splashScreen.hide();
         }
-      }, err => {
-        this.router.navigate(["/login"]);
-      }, () => {
-        this.splashScreen.hide();
-      })
+      );
       this.statusBar.styleDefault();
     });
   }

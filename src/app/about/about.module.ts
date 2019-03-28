@@ -6,15 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { AboutPage } from './about.page';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 const routes: Routes = [
   {
     path: '',
-    component: AboutPage
-  }
+    component: AboutPage,
+  },
 ];
 
 @NgModule({
@@ -25,8 +25,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
   ],
-  declarations: [AboutPage]
+  declarations: [AboutPage],
 })
 export class AboutPageModule {}

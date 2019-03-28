@@ -1,8 +1,8 @@
 {
-  "name": "app",
-  "short_name": "app",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "DinnerBell",
+  "short_name": "dinnerbell",
+  "theme_color": "#afc74d",
+  "background_color": "#8dbce2",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

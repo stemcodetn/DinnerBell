@@ -8,8 +8,8 @@ import { NewEventPage } from './new-event.page';
 const routes: Routes = [
   {
     path: '',
-    component: NewEventPage
-  }
+    component: NewEventPage,
+  },
 ];
 
 @NgModule({
@@ -18,9 +18,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
   providers: [Location],
-  declarations: [NewEventPage]
+  declarations: [NewEventPage],
 })
 export class NewEventPageModule {}

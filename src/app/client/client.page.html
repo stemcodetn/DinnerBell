@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-button slot="start" fill="clear" (click)="navigate()">
-        <mat-icon>menu</mat-icon>
+      <mat-icon>menu</mat-icon>
     </ion-button>
     <ion-title>Home</ion-title>
   </ion-toolbar>
@@ -20,65 +20,82 @@
 <ion-content *ngIf="items" class="list-mini-content" padding>
   <ion-grid class="list-mini">
     <!-- Iterate through list of events user has created. -->
-    <h1>Hosted Events:</h1>
+    <h1 class="sec-title">Hosted Events:</h1>
     <div *ngIf="items.length > 0">
       <ion-row *ngFor="let item of items">
-        <ion-card *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
-          <img [src]="item.payload.doc.data().image">
+        <ion-card
+          *ngFor="let item of items"
+          [routerLink]="['/details', item.payload.doc.id]"
+        >
+          <img [src]="item.payload.doc.data().image" />
           <ion-card-header>
             <ion-card-title>{{item.payload.doc.data().title}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-button fill="clear" slot="end">Details</ion-button>
+            <ion-button fill="clear" class="details" slot="end"
+              >Details</ion-button
+            >
           </ion-card-content>
         </ion-card>
       </ion-row>
     </div>
-    <p *ngIf="items.length == 0" class="empty-list">Hmmm... It looks like you haven't created any events...</p>
+    <p *ngIf="items.length == 0" class="empty-list">
+      Hmmm... It looks like you haven't created any events...
+    </p>
 
     <!-- Iterate through list of events user has signed up for. -->
-    <h1>Joined Events:</h1>
+    <h1 class="sec-title">Joined Events:</h1>
     <div *ngIf="items.length > 0">
       <ion-row *ngFor="let item of items">
-          <ion-card *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
-            <img [src]="item.payload.doc.data().image">
-            <ion-card-header>
-              <ion-card-title>{{item.payload.doc.data().title}}</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-button fill="clear" slot="end">Details</ion-button>
-            </ion-card-content>
-          </ion-card>
-        </ion-row>
-      </div>
-      <p *ngIf="items.length == 0" class="empty-list">Hmmm... It looks like you haven't signed up for any events.</p>
-    </ion-grid>
+        <ion-card
+          *ngFor="let item of items"
+          [routerLink]="['/details', item.payload.doc.id]"
+        >
+          <img [src]="item.payload.doc.data().image" />
+          <ion-card-header>
+            <ion-card-title>{{item.payload.doc.data().title}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button fill="clear" class="details" slot="end"
+              >Details</ion-button
+            >
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
+    <p *ngIf="items.length == 0" class="empty-list">
+      Hmmm... It looks like you haven't signed up for any events.
+    </p>
+  </ion-grid>
   <!--If you haven't signed up for any events-->
   <!-- <div *ngIf="items.length == 0" class="empty-list">
     <h1>Hosted Events: </h1>
     <div class="empty-list">No events listed in your local area...</div>
   </div> -->
-
-
 </ion-content>
 <ion-footer>
   <div class="footer">
     <ion-fab vertical="bottom" horizontal="end">
-        <ion-fab-button><mat-icon>add</mat-icon></ion-fab-button>
-        <ion-fab-list side="top">
-          
-          <button ion-fab class="plate" [routerLink]="['/new-event']">
-              <ion-fab-button size="small"><ion-icon src="../../assets/imgs/plate.svg"></ion-icon></ion-fab-button>
-              <ion-label class="plate-label">Create Event</ion-label>
-           </button>
-          <button ion-fab class="calendar" [routerLink]="['/join-event']">
-              <ion-fab-button size="small"><mat-icon>calendar_today</mat-icon></ion-fab-button>
-              <ion-label>Join Event</ion-label>
-           </button>
-        </ion-fab-list>
-      </ion-fab>
-      <!--logout button wsa here-->
-    </div>
+      <ion-fab-button class="add" color="secondary"
+        ><mat-icon>add</mat-icon></ion-fab-button
+      >
+      <ion-fab-list side="top">
+        <button ion-fab class="plate" [routerLink]="['/new-event']">
+          <ion-fab-button size="small"
+            ><ion-icon src="../../assets/imgs/plate.svg"></ion-icon
+          ></ion-fab-button>
+          <ion-label class="plate-label">Create Event</ion-label>
+        </button>
+        <button ion-fab class="calendar" [routerLink]="['/explore']">
+          <ion-fab-button size="small">
+            <mat-icon>calendar_today</mat-icon>
+          </ion-fab-button>
+          <ion-label>Join Event</ion-label>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+    <!--logout button wsa here-->
+  </div>
 </ion-footer>
 <!-- <ion-footer>
 
@@ -96,4 +113,3 @@
 
       <p [routerLink]="['/account']">test</p>
   </ion-footer> -->
-
