@@ -11,7 +11,7 @@ ion-title {
 ion-card {
   background: radial-gradient(circle at bottom, #65a0e3 0, #5064b3 75%);
   box-shadow: 0px 0px 15px 0px rgb(0, 0, 0);
-  transition: box-shadow 0.5s linear, background-position-y 0.5s ease-in-out;
+  transition: box-shadow 0.25s linear, background-position-y 0.5s ease-in-out;
 }
 .calendar,
 .plate {
