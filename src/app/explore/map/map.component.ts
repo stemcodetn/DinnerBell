@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { ExploreService } from '../explore.service';
 import { GeoJson, FeatureCollection } from '../../map';
 import { environment } from '../../../environments/environment';
 import testJson from '../../../assets/json/test.json';
+import { BehaviorSubject } from 'rxjs';
+import { takeWhile, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-map',
@@ -11,20 +13,34 @@ import testJson from '../../../assets/json/test.json';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
+  list = [];
   map: mapboxgl.Map;
   style = 'mapbox://styles/casual-nerd/cjtpsk2s74nod1fs71qsnzffu';
-  lat = 37.75;
-  lng = -122.41;
+  lat = 35.975458;
+  lng = -83.921670;
   source: any;
   markers: any;
+  private _data = new BehaviorSubject<any>([]);
 
   constructor(private exploreService: ExploreService) {
     mapboxgl.accessToken = environment.mapbox.accessToken;
   }
-
+  @Input()
+  set data(value) {
+    this._data.next(value);
+  }
+  get data() {
+    return this._data.getValue();
+  }
   ngOnInit() {
-    this.markers = this.exploreService.getMarkers();
+    this._data.subscribe(x => {this.list = x;
+      console.log( this.list)
+      //this.markers = this.exploreService.getMarkers(x);
+      //console.log("MARKERS", this.markers);
+    });
     this.initMap();
+    
+
   }
   private initMap() {
     if (navigator.geolocation) {
@@ -49,32 +65,32 @@ export class MapComponent implements OnInit {
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', event => {
-      this.map.addSource('layers', {
+      console.log("Map beginning to load")
+      this.map.addSource('test', {
         type: 'geojson',
         data: '../../../assets/json/test.geojson',
       });
-
-      this.source = this.map.getSource('layers');
-
-      // this.markers.subscribe(markers => {
-      //   let data = new FeatureCollection(markers);
-      //   this.source.setData(data);
-      // });
-
+      
+      this.source = this.map.getSource('test');
+      this.source.setData('../../../assets/json/test.geojson');
       this.map.addLayer({
         id: 'styles',
-        type: 'symbol',
-        source: 'layers',
-        layout: {
-          'text-field': '{message}',
-          'text-size': 14,
-          'text-transform': 'uppercase',
-          'text-offset': [0, 1.5],
-        },
+        type: 'circle',
+        source: 'test',
+        // layout: {
+        //   'text-field': '{message}',
+        //   'text-size': 14,
+        //   'text-transform': 'uppercase',
+        //   'text-offset': [0, 1.5],
+        // },
         paint: {
-          'text-color': '#f16624',
-          'text-halo-color': '#fff',
-          'text-halo-width': 2,
+          'circle-radius': 8,
+          'circle-color': '#3E4DFF',
+          'circle-stroke-width': 1,
+          'circle-stroke-color': '#fff',
+          // 'text-color': '#f16624',
+          // 'text-halo-color': '#fff',
+          // 'text-halo-width': 8,
         },
       });
     });
