@@ -10,3 +10,9 @@ With that done, run ```ionic serve``` to build the website and host it on the lo
 ## On Comments
 
 Due to the volume of files in this project, we decided to write comments in the ```.page.ts``` file for each page to save time.
+
+## Colort Scheme
+
+primary color - #41BC95
+secondary color - 43BC91
+background color - FCFFFC
