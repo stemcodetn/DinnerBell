@@ -1,11 +1,12 @@
 h1 {
   font-family: 'Mermaid', serif;
+  color: white;
 }
 .mat-display-3 {
   width: 180px;
   margin-bottom: 3%;
   margin-left: -5%;
-  background: linear-gradient(to bottom, #afc74d 0, #afc74d 100%);
+  background: linear-gradient(to bottom, #009E77 0, #009E77 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 4px 4px;
@@ -13,7 +14,7 @@ h1 {
 }
 .mat-display-3:hover {
   background-size: 4px 100px;
-  color: #687ee4;
+  color: #abb7e9;
 }
 .account-long {
   width: 275px;
@@ -23,7 +24,7 @@ h1 {
 }
 .mat-title {
   font-family: 'Lato', sans-serif;
-  color: #363636;
+  color: #bebbbb;
 }
 ion-grid {
   height: 100%;
