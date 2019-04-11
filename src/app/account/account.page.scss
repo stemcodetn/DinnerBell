@@ -38,7 +38,10 @@ ion-card {
 #particles-js {
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+  background-color: #7044ff;
   background-size: cover;
   background-repeat: no-repeat;
+}
+ion-item {
+  --background: none;
 }

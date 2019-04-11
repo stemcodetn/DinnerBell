@@ -18,6 +18,7 @@
   // border-radius: 3em;
   // padding:1em;
   background-color: rgba(0, 0, 0, 0);
+
 }
 // .input {
 //   border-bottom: 1px solid black;
@@ -64,11 +65,8 @@ ion-grid {
 #particles-js {
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+  background-color: #7044ff;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-ion-item {
-  --background: none;
-}
