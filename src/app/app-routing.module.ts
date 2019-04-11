@@ -9,7 +9,10 @@ const routes: Routes = [
     path: 'register',
     loadChildren: './register/register.module#RegisterPageModule',
   },
-  { path: 'join-event', loadChildren: './join-event/join-event.module#JoinEventPageModule' },
+  {
+    path: 'join-event',
+    loadChildren: './join-event/join-event.module#JoinEventPageModule',
+  },
   {
     path: 'details/:id',
     loadChildren: './details/details.module#DetailsPageModule',

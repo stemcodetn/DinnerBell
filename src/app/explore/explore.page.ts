@@ -21,7 +21,7 @@ export class ExplorePage implements OnInit {
   map: mapboxgl.Map;
   style = 'mapbox://styles/casual-nerd/cjtpsk2s74nod1fs71qsnzffu';
   lat = 35.975458;
-  lng = -83.921670;
+  lng = -83.92167;
   source: any;
   markers = [];
 
@@ -36,9 +36,8 @@ export class ExplorePage implements OnInit {
 
   ngOnInit() {
     if (this.route && this.route.data) {
-      this.getData().then(()=> this.initMap());
+      this.getData().then(() => this.initMap());
     }
-    
   }
   async getData() {
     const loading = await this.loadingCtrl.create({
@@ -53,16 +52,16 @@ export class ExplorePage implements OnInit {
         this.items.forEach(item => {
           console.log(item.payload.doc.data().location);
           this.locale.push(item.payload.doc.data().location);
-          this.markers.push(this.exploreService.getMarkers(item.payload.doc.data().location));
+          this.markers.push(
+            this.exploreService.getMarkers(item.payload.doc.data().location)
+          );
         });
-
       });
     });
   }
   async presentLoading(loading) {
-    console.log()
+    console.log();
     return await loading.present();
-    
   }
 
   getTestData() {
@@ -98,9 +97,8 @@ export class ExplorePage implements OnInit {
         });
       });
     }
-    
-    
-    console.log("MARKERS", this.markers);
+
+    console.log('MARKERS', this.markers);
     this.makeMap();
   }
 
@@ -114,15 +112,15 @@ export class ExplorePage implements OnInit {
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', event => {
-      console.log("Map beginning to load")
+      console.log('Map beginning to load');
       this.map.addSource('test', {
         type: 'geojson',
         data: {
-          "type": "FeatureCollection",
-          "features": this.markers,
+          type: 'FeatureCollection',
+          features: this.markers,
         },
       });
-      
+
       this.source = this.map.getSource('test');
       this.map.addLayer({
         id: 'styles',

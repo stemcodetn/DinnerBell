@@ -1,4 +1,10 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { ExploreService } from '../explore.service';
 import { GeoJson, FeatureCollection } from '../../map';
@@ -17,7 +23,7 @@ export class MapComponent implements OnInit {
   map: mapboxgl.Map;
   style = 'mapbox://styles/casual-nerd/cjtpsk2s74nod1fs71qsnzffu';
   lat = 35.975458;
-  lng = -83.921670;
+  lng = -83.92167;
   source: any;
   markers: any;
   private _data = new BehaviorSubject<any>([]);
@@ -33,14 +39,13 @@ export class MapComponent implements OnInit {
     return this._data.getValue();
   }
   ngOnInit() {
-    this._data.subscribe(x => {this.list = x;
-      console.log( this.list)
+    this._data.subscribe(x => {
+      this.list = x;
+      console.log(this.list);
       //this.markers = this.exploreService.getMarkers(x);
       //console.log("MARKERS", this.markers);
     });
     this.initMap();
-    
-
   }
   private initMap() {
     if (navigator.geolocation) {
@@ -65,12 +70,12 @@ export class MapComponent implements OnInit {
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('load', event => {
-      console.log("Map beginning to load")
+      console.log('Map beginning to load');
       this.map.addSource('test', {
         type: 'geojson',
         data: '../../../assets/json/test.geojson',
       });
-      
+
       this.source = this.map.getSource('test');
       this.source.setData('../../../assets/json/test.geojson');
       this.map.addLayer({

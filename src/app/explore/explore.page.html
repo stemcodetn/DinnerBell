@@ -23,7 +23,6 @@
     <!-- Search Bar (MD or Ionic) -->
     <mat-sidenav-container>
       <mat-sidenav #sidenav [mode]="control.value">
-        
         <div *ngIf="items && items.length > 0">
           <ion-card
             *ngFor="let item of items"
@@ -56,8 +55,7 @@
           </ion-button>
         </ion-toolbar>
         <div class="map" id="map">
-
-        <!--<app-map [data]="this.locale"></app-map>-->
+          <!--<app-map [data]="this.locale"></app-map>-->
         </div>
       </mat-sidenav-content>
     </mat-sidenav-container>

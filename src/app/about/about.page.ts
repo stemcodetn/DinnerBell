@@ -12,7 +12,7 @@ export class AboutPage implements OnInit {
   slideOpts = {
     slidesPerView: 1.0,
     spaceBetween: 0,
-    centeredSlides: true
+    centeredSlides: true,
   };
   screenWidth: number;
   constructor(private router: Router, private platform: Platform) {}
@@ -23,5 +23,4 @@ export class AboutPage implements OnInit {
   navigate() {
     this.router.navigate(['/nav']);
   }
-  
 }

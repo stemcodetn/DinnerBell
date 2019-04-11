@@ -37,20 +37,24 @@ export class NavPage implements OnInit {
   navigate() {
     this.router.navigate(['/nav']);
   }
-  logout(){
-    this.authService.doLogout()
-    .then(res => {
-      this.router.navigate(["/login"]);
-    }, err => {
-      console.log(err);
-    })
+  logout() {
+    this.authService.doLogout().then(
+      res => {
+        this.router.navigate(['/login']);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
-  switchUser(){
-    this.authService.doLogout()
-    .then(res => {
-      this.router.navigate(["/login"]);
-    }, err => {
-      console.log(err);
-    })
+  switchUser() {
+    this.authService.doLogout().then(
+      res => {
+        this.router.navigate(['/login']);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }

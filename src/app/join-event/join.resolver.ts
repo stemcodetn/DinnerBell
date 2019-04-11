@@ -4,7 +4,6 @@ import { FirebaseService } from '../services/firebase.service';
 
 @Injectable()
 export class JoinResolver implements Resolve<any> {
-
   constructor(private firebaseService: FirebaseService) {}
 
   resolve() {

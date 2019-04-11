@@ -26,11 +26,12 @@ ion-title {
 //   border-radius: 5px;
 //   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
 // }
-.calendar, .plate {
+.calendar,
+.plate {
   right: 8px;
   background: none;
 }
-.fab{
+.fab {
   contain: layout;
 }
 button[ion-fab] {
@@ -38,19 +39,17 @@ button[ion-fab] {
   position: relative;
 
   ion-label {
-      position: absolute;
-      top: 14px;
-      right: 65px;
-      width:80px;
-      color: white;
-      font-size:1.25em;
-      background-color: rgba(0,0,0,0.7);
-      line-height: 24px;
-      padding: 4px 8px;
-      border-radius: 4px;
+    position: absolute;
+    top: 14px;
+    right: 65px;
+    width: 80px;
+    color: white;
+    font-size: 1.25em;
+    background-color: rgba(0, 0, 0, 0.7);
+    line-height: 24px;
+    padding: 4px 8px;
+    border-radius: 4px;
   }
-  
-  
 }
 .plate-label {
   width: 100px !important;

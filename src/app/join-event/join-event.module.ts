@@ -7,9 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { JoinEventPage } from './join-event.page';
 import { JoinResolver } from './join.resolver';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 const routes: Routes = [
@@ -17,9 +17,9 @@ const routes: Routes = [
     path: '',
     component: JoinEventPage,
     resolve: {
-      data: JoinResolver
-    }
-  }
+      data: JoinResolver,
+    },
+  },
 ];
 
 @NgModule({
@@ -32,12 +32,9 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [JoinEventPage],
-  providers: [
-    JoinResolver,
-    HttpClient
-  ]
+  providers: [JoinResolver, HttpClient],
 })
 export class JoinEventPageModule {}
