@@ -35,10 +35,11 @@ export class ExploreService {
     let geoJSON = {};
     tempLocale = this.getGeocoding(locale);
     tempLocale.subscribe(_marker => {
-      console.log('MARKER', _marker);
       var marker = <GeoJSON>_marker;
       obj['type'] = 'Feature';
-      obj['properties'] = {};
+      obj['properties'] = {
+        title: locale
+      };
       obj['geometry'] = {
         type: 'Point',
         coordinates: [
@@ -47,7 +48,6 @@ export class ExploreService {
         ],
       };
     });
-    console.log('SERVICE OUTPUT', obj);
     return obj;
   }
 }

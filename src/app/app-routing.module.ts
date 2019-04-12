@@ -36,6 +36,11 @@ const routes: Routes = [
     loadChildren: './explore/explore.module#ExplorePageModule',
   },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  {
+    path: 'globaldetail/:id',
+    loadChildren: './globaldetail/globaldetail.module#GlobaldetailPageModule',
+  },
+  { path: 'globaldetail', loadChildren: './globaldetail/globaldetail.module#GlobaldetailPageModule' },
 
   // { path: 'new-event-modal', loadChildren: './new-event-modal/new-event-modal.module#NewEventModalPageModule' },
 ];

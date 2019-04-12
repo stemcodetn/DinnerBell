@@ -13,13 +13,13 @@
 .submit-btn {
   margin-top: 40px;
 }
-.email {
-  // border: 1px solid red;
-  // border-radius: 3em;
-  // padding:1em;
-  background-color: rgba(0, 0, 0, 0);
+// .email {
+//   // border: 1px solid red;
+//   // border-radius: 3em;
+//   // padding:1em;
+//   //background-color: rgba(0, 0, 0, 0);
 
-}
+// }
 // .input {
 //   border-bottom: 1px solid black;
 // }
@@ -70,3 +70,6 @@ ion-grid {
   background-repeat: no-repeat;
 }
 
+ion-item {
+  --background: none;
+}

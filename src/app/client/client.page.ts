@@ -20,10 +20,6 @@ export class ClientPage implements OnInit {
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute,
-    http: Http,
-    httpClient: HttpClient,
-    registry: MatIconRegistry,
-    sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
@@ -41,7 +37,6 @@ export class ClientPage implements OnInit {
     this.route.data.subscribe(routeData => {
       routeData['data'].subscribe(data => {
         loading.dismiss();
-        console.log(data);
         this.items = data;
       });
     });

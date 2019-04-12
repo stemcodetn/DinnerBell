@@ -50,7 +50,6 @@ export class ExplorePage implements OnInit {
         loading.dismiss();
         this.items = data;
         this.items.forEach(item => {
-          console.log(item.payload.doc.data().location);
           this.locale.push(item.payload.doc.data().location);
           this.markers.push(
             this.exploreService.getMarkers(item.payload.doc.data().location)
@@ -60,7 +59,6 @@ export class ExplorePage implements OnInit {
     });
   }
   async presentLoading(loading) {
-    console.log();
     return await loading.present();
   }
 
@@ -98,7 +96,6 @@ export class ExplorePage implements OnInit {
       });
     }
 
-    console.log('MARKERS', this.markers);
     this.makeMap();
   }
 
@@ -126,22 +123,24 @@ export class ExplorePage implements OnInit {
         id: 'styles',
         type: 'circle',
         source: 'test',
-        // layout: {
-        //   'text-field': '{message}',
-        //   'text-size': 14,
-        //   'text-transform': 'uppercase',
-        //   'text-offset': [0, 1.5],
-        // },
         paint: {
           'circle-radius': 8,
           'circle-color': '#3E4DFF',
           'circle-stroke-width': 1,
           'circle-stroke-color': '#fff',
-          // 'text-color': '#f16624',
-          // 'text-halo-color': '#fff',
-          // 'text-halo-width': 8,
         },
       });
+    });
+    this.map.on('click', 'styles', (e) => {
+      this.map.flyTo({center: e.features[0].geometry.coordinates});
+    })
+       
+    this.map.on('mouseenter', 'styles', () => {
+      this.map.getCanvas().style.cursor = 'pointer';
+    });
+       
+    this.map.on('mouseleave', 'styles', () => {
+      this.map.getCanvas().style.cursor = '';
     });
   }
 }

@@ -19,7 +19,7 @@ const routes: Routes = [
     component: ExplorePage,
     resolve: {
       data: ExploreResolver,
-      cards: ClientResolver,
+      //cards: ClientResolver,
     },
   },
 ];

@@ -22,20 +22,22 @@
   <div>
     <!-- Search Bar (MD or Ionic) -->
     <mat-sidenav-container>
-      <mat-sidenav #sidenav [mode]="control.value">
+      <mat-sidenav #sidenav [mode]="control.value" class="sidnav">
         <div *ngIf="items && items.length > 0">
-          <ion-card
-            *ngFor="let item of items"
-            [routerLink]="['/details', item.payload.doc.id]"
-          >
-            <img [src]="item.payload.doc.data().image" />
-            <ion-card-header>
-              <ion-card-title>{{item.payload.doc.data().title}}</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-button fill="clear" slot="end">Details</ion-button>
-            </ion-card-content>
-          </ion-card>
+          <div *ngFor="let item of items">
+            <ion-card
+              *ngFor="let item of items"
+              [routerLink]="['/globaldetail', item.payload.doc.id]"
+            >
+              <img [src]="item.payload.doc.data().image" />
+              <ion-card-header>
+                <ion-card-title>{{item.payload.doc.data().title}}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-button fill="clear" slot="end">Details</ion-button>
+              </ion-card-content>
+            </ion-card>
+          </div>
         </div>
       </mat-sidenav>
       <mat-sidenav-content>
