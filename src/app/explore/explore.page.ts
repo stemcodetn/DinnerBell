@@ -31,7 +31,7 @@ export class ExplorePage implements OnInit {
     private loadingCtrl: LoadingController,
     private exploreService: ExploreService
   ) {
-    mapboxgl.accessToken = environment.mapbox.accessToken;
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2FzdWFsLW5lcmQiLCJhIjoiY2pwcHhjcGxhMG52cTN5b2cyeGtkaXZkZyJ9.S1QgnsgWwYiJnnUKyFb2WQ';
   }
 
   ngOnInit() {
