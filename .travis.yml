@@ -4,7 +4,7 @@ node_js:
 before_script:
  - npm install -g ionic cordova
 script:
- - ionic cordova build browser --prod --verbose
+ - ionic build browser --prod --verbose
 deploy:
  provider: pages
  skip-cleanup: true
