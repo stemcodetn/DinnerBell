@@ -11,6 +11,8 @@ export const environment = {
     projectId: 'dinnerbell-222518',
     storageBucket: 'dinnerbell-222518.appspot.com',
     messagingSenderId: '806159444526',
+    accessToken:
+      'pk.eyJ1IjoiY2FzdWFsLW5lcmQiLCJhIjoiY2pwcHhjcGxhMG52cTN5b2cyeGtkaXZkZyJ9.S1QgnsgWwYiJnnUKyFb2WQ',
   },
   mapbox: {
     accessToken:
