@@ -2,7 +2,7 @@ language: node_js
 node_js:
  - "node"
 before_script:
- — npm install -g ionic cordova
+ — "npm install -g ionic cordova"
 script:
  — ionic cordova build browser —-prod
 deploy:
