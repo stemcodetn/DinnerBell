@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+ — “11.12.0”
+branches:
+ only:
+ — master
+before_script:
+ - npm install 
+ — npm install -g ionic cordova
+script:
+ — ionic cordova build browser — prod
+deploy:
+ provider: pages
+ skip-cleanup: true
+ github-token: $GITHUB_TOKEN 
+ keep-history: true
+ target_branch: gh-pages
+ on:
+   branch: master
+ local_dir: www
