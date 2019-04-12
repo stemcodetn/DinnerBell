@@ -5,10 +5,10 @@ branches:
  only:
  — master
 before_script:
- - npm install 
+ — npm install 
  — npm install -g ionic cordova
 script:
- — ionic cordova build browser — prod
+ — ionic cordova build browser —-prod
 deploy:
  provider: pages
  skip-cleanup: true
