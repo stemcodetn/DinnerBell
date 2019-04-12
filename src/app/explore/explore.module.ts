@@ -11,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ExploreResolver } from './explore.resolver';
 import { ClientResolver } from '../client/client.resolver';
-import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   {
@@ -34,7 +33,7 @@ const routes: Routes = [
     MatIconModule,
     MatSidenavModule,
   ],
-  declarations: [ExplorePage, MapComponent],
+  declarations: [ExplorePage],
   providers: [ExploreResolver],
 })
 export class ExplorePageModule {}
